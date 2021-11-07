@@ -1,0 +1,68 @@
+New user registration api endpoint
+
+/api/register
+
+method:POST
+
+fields: 'name', 'username','email','password', 'confirm_password','user_role','avatar'
+
+
+
+login api endpoint
+
+/api/login
+
+method:POST
+
+fields: 'email','password'
+
+
+
+Share link api with user  //User must be logged in
+
+/api/share-link
+
+method:POST
+
+fields: 'email'
+
+
+Share link api with user  //User must be logged in and i return the link in the response to user becuase on local the email is not sending
+
+/api/share-link
+
+method:POST
+
+fields: 'email'
+
+
+After user click on invitation link this api just return the user detail for later uses
+
+/api/create-user-invite
+
+method:GET
+
+
+As the user id return by a unique code in share link the user can add their remaining detail by using the following api
+
+/api/register/{id}
+
+method:POST
+
+
+fields: 'name', 'username','email','password', 'confirm_password','user_role','avatar', '_method=>PUT'
+
+
+
+
+
+As user complete their profile the activation code is send to user, again the email is not working on local so i am returning the activation link 
+
+/api/ativate-account?token={unique code}
+method:GET
+
+
+
+
+
+
